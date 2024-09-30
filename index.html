@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last of Us - Quiz</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="shortcut icon" href="./assets/images/Fireflies_logo.webp" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <aside id="main-apresentation">
+            <article>
+                <h1>The Last of Us</h1>
+                <h2>Descubra qual personagem de The Last of Us é a sua cara!</h2>
+                <p>Faça o teste e descubra quais traços você compartilha com os personagens icônicos desse universo
+                    emocionante. Venha se conectar com a sua jornada!</p>
+                <button onclick="startQuiz()">Iniciar <img id="img-fireflier-button"
+                        src="./assets/images/Fireflies_logo.webp" alt="fireflies-logo"></button>
+            </article>
+        </aside>
+
+
+        <aside id="qualities-form">
+            <form>
+                <h2>Quais das qualidades abaixo melhor descrevem você?</h2>
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" name="qualities" value="Corajoso">
+                        <span class="custom-checkbox"></span>
+                        Corajoso
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="qualities" value="Protetor">
+                        <span class="custom-checkbox"></span>
+                        Protetor
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="qualities" value="Habilidoso(a)">
+                        <span class="custom-checkbox"></span>
+                        Habilidoso(a)
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="qualities" value="Sarcástico">
+                        <span class="custom-checkbox"></span>
+                        Sarcástico
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="qualities" value="Resiliente">
+                        <span class="custom-checkbox"></span>
+                        Resiliente
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="qualities" value="Curisoso">
+                        <span class="custom-checkbox"></span>
+                        Curioso(a)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="qualities" value="Independente">
+                        <span class="custom-checkbox"></span>
+                        Independente
+                    </label>
+                    <label>
+                        <input type="checkbox" name="qualities" value="Inteligente">
+                        <span class="custom-checkbox"></span>
+                        Inteligente
+                    </label>
+                    <label>
+                        <input type="checkbox" name="qualities" value="Leal">
+                        <span class="custom-checkbox"></span>
+                        Leal
+                    </label>
+                    <label>
+                        <input type="checkbox" name="qualities" value="Forte">
+                        <span class="custom-checkbox"></span>
+                        Forte
+                    </label>
+                    <label>
+                        <input type="checkbox" name="qualities" value="Empático">
+                        <span class="custom-checkbox"></span>
+                        Empático
+                    </label>
+     
+                </div>
+                <div class="form-navigation">
+                    <button type="button" onclick="goBackToApresentation()">Voltar</button>
+                    <button type="button" onclick="goToImperfectionsForm()">Proximo</button>
+                </div>
+            </form>
+        </aside>
+
+        <aside id="imperfections-form">
+            <form>
+                <h2>Quais das imperfeições abaixo melhor descrevem você?</h2>
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Cínico">
+                        <span class="custom-checkbox"></span>
+                        Cínico
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Impaciente">
+                        <span class="custom-checkbox"></span>
+                        Impaciente
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Orgulhoso">
+                        <span class="custom-checkbox"></span>
+                        Orgulhoso
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Desconfiado">
+                        <span class="custom-checkbox"></span>
+                        Desconfiado
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Controlador">
+                        <span class="custom-checkbox"></span>
+                        Controlador
+                    </label>
+            
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Teimoso">
+                        <span class="custom-checkbox"></span>
+                        Teimoso
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Frio">
+                        <span class="custom-checkbox"></span>
+                        Frio
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Pessimísta">
+                        <span class="custom-checkbox"></span>
+                        Pessimísta
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Raivoso">
+                        <span class="custom-checkbox"></span>
+                        Raivoso
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="imperfections" value="Ansioso">
+                        <span class="custom-checkbox"></span>
+                        Ansioso
+                    </label>
+                    <label> 
+                        <input type="checkbox" name="imperfections" value="desesperado">
+                        <span class="custom-checkbox"></span>
+                        Desesperado
+                    </label>
+                    <label> 
+                        <input type="checkbox" name="imperfections" value="Medroso(a)">
+                        <span class="custom-checkbox"></span>
+                        Medroso(a)
+                    </label>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" onclick="goBackToQualities()">Voltar</button>
+                    <button class="submit-btn" type="button" onclick="submitAndShowCharacter()">Enviar</button>
+                </div>
+            </form>            
+        </aside>
+       
+    </main>
+    <footer>
+        <p>Imagens de "The Last of Us" &copy; Naughty Dog e Sony Interactive Entertainment. Todos os direitos reservados.</p>
+        <p>&copy; Desenvolvido com &hearts; por <a href="https://github.com/danieelfeer">Daniel Fernandes</a></p>
+    </footer>
+</body>
+
+<script src="./js/script.js"></script>
+
+<!--Floating Dust-->
+<ul id="scene" data-friction-x="0.03" data-friction-y="0.05">
+    <li class="layer" id="specks" data-depth="0.1"></li>
+    <li class="layer" id="layer-1" data-depth="0.15">
+        <div class="img" id="img-1"></div>
+    </li>
+    <li class="layer" id="layer-2" data-depth="0.25">
+        <div class="img" id="img-2"></div>
+    </li>
+    <li class="layer" id="layer-3" data-depth="0.45">
+        <div class="img" id="img-3"></div>
+    </li>
+</ul>
+<link rel="stylesheet" href="style/floatingDust.css">
+<script src="js/floatingDust.js"></script>
+
+</html>
