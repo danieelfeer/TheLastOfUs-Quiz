@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'The Last Of Us';
+    src: url("../assets/fonts/the-last-of-us-font/The\ Last\ Of\ Us\ Rough.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'FF Din';
+    src: url("../assets/fonts/the-last-of-us-font/Din-Font-1/DIN.ttf") format('truetype');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "The Last Of Us";
+    font-weight: normal;
+}
+
+:root{
+    --principal-font: "The Last Of Us", sans-serif;
+    --secundary-font: "FF Din", sans-serif;
+
+    --title-color: white;
+    --text-color: #a7a7a7;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background: black url('../assets/images/landding-img.jpg') no-repeat left fixed;
+}
+
+main{
+    flex: 1;
+}
+
+aside{
+    height: 90vh;
+    width: 45vw;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20vw;
+
+    position: relative;
+    z-index: 10001;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#qualities-form, #imperfections-form{
+    display: none;
+    opacity: 0; 
+    transition: opacity 1s;
+}
+
+
+
+label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--secundary-font);
+    font-size: 1.1rem;
+    color: var(--text-color);
+
+    padding: 0.2rem 0rem;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 2 colunas */
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+
+/* Oculta o checkbox padrão */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilo do label que atuará como checkbox */
+.custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px; /* Espaço entre o checkbox e o texto */
+}
+
+/* Estilo quando o checkbox está selecionado */
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: transparent;
+}
+
+/* Estilo do checkmark */
+.custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+/* Exibe o checkmark quando selecionado */
+input[type="checkbox"]:checked + .custom-checkbox::after {
+    opacity: 1;
+}   
+
+
+h1{
+    font-size: 7rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+h2{
+    font-family: var(--secundary-font);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+p{
+    font-family: var(--secundary-font);
+    color: #a7a7a7;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem 0rem;
+}
+
+button{
+    height: 1rem;
+    font-family: var(--secundary-font);
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #ffffffc3;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 100001;
+}
+
+button:hover{
+    color: #ffffff;
+}
+
+.submit-btn{
+    background-color: #a7a7a729;
+    border: 1px solid white;
+    padding: 1rem;
+}
+.submit-btn:hover{
+    color: rgb(251, 251, 64);
+    border-color: rgb(251, 251, 64);
+}
+
+
+.form-navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#img-fireflier-button{
+    width: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+    margin: 0;
+}
+
+button:hover #img-fireflier-button{
+    opacity: 1;
+}
+
+a{
+    font-family: var(--secundary-font);
+    font-weight:normal;
+    color: #a7a7a79a;  
+    position: relative;  
+    z-index: 10001;  
+}
+a:hover{
+    color: #a7a7a7;
+}
+
+footer{
+    text-align: center;
+    height: 10vh;
+}   
+
+footer > p{
+    margin: 0 0;
+}
