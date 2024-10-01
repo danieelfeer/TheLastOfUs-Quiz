@@ -1,6 +1,7 @@
 const presentation = document.getElementById('main-apresentation');
 const qualitiesForm = document.getElementById('qualities-form');
 const imperfectionsForm = document.getElementById('imperfections-form');
+const characterResult = document.getElementById('character-result');
 
 function startQuiz(){
     transitionElements(presentation, qualitiesForm);
@@ -53,10 +54,10 @@ function submitQualities(){
                 assignScoresToCharacters('joel', 'ellie', 'tess');
                 break;
             case "Protetor":
-                assignScoresToCharacters('joel', 'ellie', 'tess');
+                assignScoresToCharacters('tess', 'joel', 'ellie');
                 break;
             case "Habilidoso(a)":
-                assignScoresToCharacters('ellie', 'joel', null);
+                assignScoresToCharacters('ellie', 'joel', 'tess');
                 break;
             case "Sarcástico":
                 assignScoresToCharacters('ellie', 'joel', null);
@@ -65,22 +66,22 @@ function submitQualities(){
                 assignScoresToCharacters('ellie', 'joel', 'tess');
                 break;
             case "Curioso(a)":
-                assignScoresToCharacters('ellie', 'joel', null);
+                assignScoresToCharacters('ellie', null, null);
                 break;
             case "Independente":
-                assignScoresToCharacters('ellie', 'joel', null);
+                assignScoresToCharacters('tess', 'ellie', 'joel');
                 break;
             case "Inteligente":
-                assignScoresToCharacters('ellie', 'joel', null);
+                assignScoresToCharacters('tess', 'ellie', 'joel');
                 break;
             case "Leal":
-                assignScoresToCharacters('joel', 'ellie', null);
+                assignScoresToCharacters('joel', 'tess', 'ellie');
                 break;
             case "Forte":
-                assignScoresToCharacters('joel', 'ellie', null);
+                assignScoresToCharacters('joel', 'ellie', 'tess');
                 break;
             case "Empático":
-                assignScoresToCharacters('ellie', 'joel', null);
+                assignScoresToCharacters('ellie', 'tess', 'joel');
                 break;
             default:
                 break;
@@ -147,6 +148,11 @@ function assignScoresToCharacters(character1, character2, character3){
 function submitAndShowCharacter(){
     submitQualities();
     submitImperfections();
+    displayResult();
+}
+
+function displayResult(){
+    transitionElements(imperfectionsForm, characterResult);
 
     console.log('Valores das pontuações:', scores);
     
@@ -156,5 +162,46 @@ function submitAndShowCharacter(){
     console.log('Maior pontuação:', maxScore);
     
     const highestScoringCharacters = Object.keys(scores).filter(character => scores[character] === maxScore);
+
     console.log('Personagens com a maior pontuação:', highestScoringCharacters);
+
+    const resultName = document.getElementById('character-name');
+    const characterDescription = document.getElementById('character-description');
+    const resetBtn = document.getElementById('reset-form-btn');
+
+
+    if (highestScoringCharacters.length > 0) {
+
+        const characterImages = {
+            joel: 'assets/images/joel-img.jpg',  
+            ellie: 'assets/images/ellie-img.jpg',
+            tess: 'assets/images/tess-img.jpg',  
+            clicker: 'assets/images/clicker-img.jpg'
+        };
+
+        const characterDescriptions = {
+            joel: "Joel é um homem marcado pela dor e pela perda. Sua vida foi devastada por tragédias pessoais, e ele se tornou um sobrevivente endurecido em um mundo cruel. Com uma força física impressionante, ele não é apenas um lutador; é alguém que carrega o peso do seu passado e a responsabilidade de proteger aqueles que ama. Joel é uma figura complexa, que luta para equilibrar a dureza da sobrevivência com os fragmentos de esperança que ainda restam em seu coração.",
+
+            ellie: "Ellie é uma jovem cujo espírito indomável brilha mesmo nas circunstâncias mais sombrias. Com uma inteligência aguçada e uma coragem admirável, ela se recusa a ser definida pelas dificuldades ao seu redor. Seu senso de humor sarcástico serve como uma armadura, mas por trás das piadas, existe uma profunda vulnerabilidade. Ellie representa a esperança em um mundo devastado, mostrando que mesmo em meio ao caos, a conexão humana e a empatia são fundamentais para a sobrevivência.",
+
+            tess: "Tess é a encarnação da força e da determinação. Uma mulher que sabe o que significa lutar todos os dias, ela é leal e corajosa, enfrentando os desafios do mundo com uma garra impressionante. Sua relação com Joel é baseada em confiança mútua e uma compreensão profunda do que significa sobreviver. Tess é uma personagem que mostra que, mesmo em tempos sombrios, a solidariedade e o apoio entre os seres humanos podem oferecer uma luz na escuridão.",
+
+            clicker: "Clickers são o pesadelo personificado. Transformados pela infecção, eles são criaturas que perderam sua humanidade, tornando-se símbolos do que o mundo se tornou. Sem a capacidade de ver, mas com uma determinação brutal para atacar, eles representam os medos mais profundos da perda de controle e da transformação em algo que não se reconhece mais. Os Clickers são um lembrete constante de que o verdadeiro terror pode vir não apenas de ameaças externas, mas também da perda de nossa essência humana."
+        };
+
+        const characterToDisplay = highestScoringCharacters[0];
+
+        document.body.style.backgroundImage = `url("${characterImages[characterToDisplay]}")`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.backgroundPosition = 'center';
+
+        resultName.textContent = characterToDisplay.charAt(0).toUpperCase() + characterToDisplay.slice(1);
+
+        characterDescription.textContent = characterDescriptions[characterToDisplay];
+       
+        resetBtn.style.display = 'flex';
+    }
 }
+
+

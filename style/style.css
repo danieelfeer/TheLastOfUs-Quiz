@@ -44,12 +44,18 @@ aside{
     float: right;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     padding-right: 20vw;
 
     position: relative;
     z-index: 10001;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 
@@ -146,7 +152,6 @@ p{
     color: #a7a7a7;
     font-size: 1.1rem;
     line-height: 1.8;
-    margin: 2rem 0rem;
 }
 
 button{
@@ -158,7 +163,7 @@ button{
     font-size: 1.2rem;
     text-transform: uppercase;
     border: none;
-    margin-top: 1rem;
+    margin-top: 2rem;
     background-color: transparent;
     cursor: pointer;
     display: flex;
@@ -183,6 +188,9 @@ button:hover{
     border-color: rgb(251, 251, 64);
 }
 
+#reset-form-btn{
+    display: none;
+}
 
 .form-navigation{
     display: flex;
@@ -195,12 +203,20 @@ button:hover{
 #img-fireflier-button{
     width: 2rem;
     opacity: 0;
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease-in; 
     margin: 0;
 }
 
 button:hover #img-fireflier-button{
     opacity: 1;
+}
+
+#character-name{
+    font-size: 10rem;
+}
+
+#character-description{
+    text-align: justify;
 }
 
 a{

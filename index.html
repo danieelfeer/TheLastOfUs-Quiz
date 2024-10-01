@@ -15,11 +15,11 @@
             <article>
                 <h1>The Last of Us</h1>
                 <h2>Descubra qual personagem de The Last of Us é a sua cara!</h2>
-                <p>Faça o teste e descubra quais traços você compartilha com os personagens icônicos desse universo
-                    emocionante. Venha se conectar com a sua jornada!</p>
-                <button onclick="startQuiz()">Iniciar <img id="img-fireflier-button"
-                        src="./assets/images/Fireflies_logo.webp" alt="fireflies-logo"></button>
+                <p>Faça o teste e descubra quais traços você compartilha com os personagens icônicos desse universo emocionante. Venha se conectar com a sua jornada!</p>
             </article>
+
+            <button onclick="startQuiz()">Iniciar <img id="img-fireflier-button"
+                src="./assets/images/Fireflies_logo.webp" alt="fireflies-logo"></button>
         </aside>
 
 
@@ -176,6 +176,14 @@
                     <button class="submit-btn" type="button" onclick="submitAndShowCharacter()">Enviar</button>
                 </div>
             </form>            
+        </aside>
+
+        <aside id="character-result">
+            <div>
+                <h1 id="character-name"></h1>
+                <p id="character-description"></p>
+                <button id="reset-form-btn" class="submit-btn" type="button" onclick="location.reload();">Reiniciar</button>
+            </div>
         </aside>
        
     </main>
