@@ -1,11 +1,15 @@
-html {
+
+#scene {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  font-family: 'Orbitron', sans-serif;
+  position: absolute; 
 }
 
 li {
   list-style-type: none;
 }
+
 
 .slider-box {
   float: right;
@@ -27,6 +31,7 @@ li {
   z-index: 999;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .speck {
@@ -49,6 +54,7 @@ li {
   animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
   animation-name: float;
   animation-iteration-count: infinite;
+  overflow: hidden;
 }
 
 #img-1 {

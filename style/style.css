@@ -26,16 +26,17 @@
     --text-color: #a7a7a7;
 }
 
-body{
 
+body{
     min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     color: white;
-    background: black url('../assets/images/landding-img.jpg') no-repeat left fixed;
-    
+    background: black url('../assets/images/landding-img.jpg') no-repeat fixed;
+    overflow: hidden;
 }
+
 
 main{
     flex: 1;
@@ -43,7 +44,7 @@ main{
 
 aside{
     height: 90vh;
-    width: 45vw;
+    max-width: 53rem;
     float: right;
     display: flex;
     flex-direction: column;
@@ -70,7 +71,7 @@ form{
     gap: 2rem;
 }
 
-#qualities-form, #imperfections-form{
+#qualities-form, #imperfections-form, #character-result{
     display: none;
     opacity: 0; 
     transition: opacity 1s;
@@ -235,10 +236,98 @@ a:hover{
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     height: 10vh;
 }   
 
 footer > p{
     margin: 0 0;
+}
+
+@media (max-width: 1130px) {
+    body{
+        background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../assets/images/landding-img.jpg') no-repeat center center fixed;
+        background-size: cover;
+        background-position: -70px center;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50vh
+    }
+
+    h1{
+        font-size: 5.5rem;
+    }
+
+    button{
+        border: 1px solid white;
+        padding: 1rem;
+        background-color: #a7a7a737;
+    }
+
+    #img-fireflier-button{
+        opacity: 1;
+    }
+
+    article > h2,
+    article > p{
+        width: 65vw;
+    }
+
+    aside{
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100vw;
+    }
+
+    article{
+        align-items: center;
+        justify-content: center;
+    }
+    
+    form{
+        width: 90vw;
+        align-items: stretch;
+    }
+
+    .checkbox-container{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #character-result{
+        width: 90vw;
+        text-align: center;
+        float: none;
+    }
+    #character-result > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #character-description{
+        text-align: center;
+        font-size: 12px;
+    }
+    #reset-form-btn{
+        display: block;
+    }
+
+    footer{
+        height: 10vh;
+    }
+    footer > p{
+        font-size: 0.8rem;
+    }
 }
