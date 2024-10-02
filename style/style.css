@@ -181,6 +181,12 @@ button{
 button:hover{
     color: #ffffff;
 }
+button:focus {
+    outline: none;
+}
+button:active {
+    background-color: transparent; 
+}
 
 .submit-btn{
     background-color: #a7a7a729;
@@ -326,6 +332,7 @@ footer > p{
 
     footer{
         height: 10vh;
+        padding-bottom: 5vh;
     }
     footer > p{
         font-size: 0.8rem;
