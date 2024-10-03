@@ -43,44 +43,42 @@ var scores = {
     clicker: 0
 };
 
-function submitQualities(){
-
+function submitQualities() {
     const checkboxes = document.querySelectorAll('input[name="qualities"]:checked');
     
     checkboxes.forEach(checkbox => {
-
         switch (checkbox.value) {
-            case "Corajoso":
+            case "Brave":
                 assignScoresToCharacters('joel', 'ellie', 'tess');
                 break;
-            case "Protetor":
+            case "Protector":
                 assignScoresToCharacters('tess', 'joel', 'ellie');
                 break;
-            case "Habilidoso(a)":
+            case "Skilled":
                 assignScoresToCharacters('ellie', 'joel', 'tess');
                 break;
-            case "Sarcástico":
+            case "Sarcastic":
                 assignScoresToCharacters('ellie', 'joel', null);
                 break;
-            case "Resiliente":
+            case "Resilient":
                 assignScoresToCharacters('ellie', 'joel', 'tess');
                 break;
-            case "Curioso(a)":
+            case "Curious":
                 assignScoresToCharacters('ellie', null, null);
                 break;
-            case "Independente":
+            case "Independent":
                 assignScoresToCharacters('tess', 'ellie', 'joel');
                 break;
-            case "Inteligente":
+            case "Intelligent":
                 assignScoresToCharacters('tess', 'ellie', 'joel');
                 break;
-            case "Leal":
+            case "Loyal":
                 assignScoresToCharacters('joel', 'tess', 'ellie');
                 break;
-            case "Forte":
+            case "Strong":
                 assignScoresToCharacters('joel', 'ellie', 'tess');
                 break;
-            case "Empático":
+            case "Empathetic":
                 assignScoresToCharacters('ellie', 'tess', 'joel');
                 break;
             default:
@@ -88,48 +86,48 @@ function submitQualities(){
         }
     });
 
-    //console.log(scores.joel, scores.tess, scores.ellie, scores.clicker);
+    // console.log(scores.joel, scores.tess, scores.ellie, scores.clicker);
 }
 
-function submitImperfections(){
+function submitImperfections() {
     const checkboxes = document.querySelectorAll('input[name="imperfections"]:checked');
     
     checkboxes.forEach(checkbox => {
         switch (checkbox.value) {
-            case "Cínico":
+            case "Cynical":
                 assignScoresToCharacters('joel', 'tess', 'ellie');
                 break;
-            case "Impaciente":
+            case "Impatient":
                 assignScoresToCharacters('ellie', 'joel');
                 break;
-            case "Orgulhoso":
+            case "Proud":
                 assignScoresToCharacters('tess', 'joel', 'ellie');
                 break;
-            case "Desconfiado":
+            case "Distrustful":
                 assignScoresToCharacters('joel', 'ellie', 'tess');
                 break;
-            case "Controlador":
+            case "Controlling":
                 assignScoresToCharacters('tess', 'joel');
                 break;
-            case "Teimoso":
+            case "Stubborn":
                 assignScoresToCharacters('ellie', 'joel');
                 break;
-            case "Frio":
+            case "Cold":
                 assignScoresToCharacters('clicker', 'tess', 'joel');
                 break;
-            case "Pessimista":
+            case "Pessimistic":
                 assignScoresToCharacters('joel', 'tess', 'ellie');
                 break;
-            case "Raivoso":
+            case "Angry":
                 assignScoresToCharacters('clicker', 'joel');
                 break;
-            case "Ansioso":
+            case "Anxious":
                 assignScoresToCharacters('ellie');
                 break;
-            case "Desesperado":
+            case "Desperate":
                 assignScoresToCharacters('tess', 'ellie'); 
                 break;
-            case "Medroso(a)":
+            case "Fearful":
                 assignScoresToCharacters('clicker', 'tess', 'joel');
                 break;
             default:
@@ -137,7 +135,6 @@ function submitImperfections(){
         }
     });
 }
-
 
 function assignScoresToCharacters(character1, character2, character3){
     if (character1) scores[character1] += 5;
